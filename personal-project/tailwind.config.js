@@ -21,22 +21,32 @@ module.exports = {
         fadeOut: {
           from: {opacity: '1'},
           to: {opacity: '0'}
+        },
+        wipeDown: {
+          from: { height: '0', opacity: '0' },
+          to: { height: '100%', opacity: '1'}
+        },
+        shrink: {
+          from: { 'max-width': '1000px' },
+          to: { 'max-width': '33%'}
+        },
+        fadeInFromLeft: {
+          from: { transform: 'translateX(-50px)', opacity: '0'},
+          to: { transform: 'translateX(0)',opacity: '1'}
+        },
+        fadeInFromRight: {
+          from: { transform: 'translateX(50px)', opacity: '0'},
+          to: { transform: 'translateX(0)',opacity: '1'}
         }
-        // typing3: {
-        //   from: { width: '0', opacity: '1' },
-        //   to: { width: '78px', opacity: '1' }
-        // },
-        // blink: {
-        //   'from, to': { borderColor: 'transparent' },
-        //   '50%': { borderColor: 'orange' }
-        // },
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
         typing1: 'typing1 3s steps(40, end) forwards, fadeOut 1s 5.5s ease forwards',
         typing2: 'typing2 1.5s steps(40, end) forwards 3.5s, fadeOut 1s 6s ease forwards',
-        // typing3: 'typing3 0.5s steps(40, end) forwards 5.5s',
-        // blink: 'blink .75s step-end infinite',
+        wipeDown: 'wipeDown 1s linear 6s forwards',
+        shrink: 'shrink 3s ease-in-out 5s forwards',
+        fadeInFromLeft: 'fadeInFromLeft 3s ease-out 7s forwards',
+        fadeInFromRight: 'fadeInFromRight 3s ease-out 7s forwards',
       },
     },
   },
