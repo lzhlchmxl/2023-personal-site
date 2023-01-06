@@ -6,7 +6,9 @@ import { Outlet } from 'react-router-dom';
 function App() {
 
   return (
-    <Outlet />
+    <div className='flex h-screen items-center justify-center bg-black'>
+      <Outlet />
+    </div>
   );
 }
 
