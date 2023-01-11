@@ -86,7 +86,7 @@ function ResumePage() {
       {/* main content section */}
       <div className='flex flex-col w-[100%] max-w-[1000px] my-10 relative'>
         {/* about me subsection */}
-        <div className='text-white absolute top-5 right-0 hover:underline'>
+        <div className='text-white absolute top-5 right-0 hover:underline z-30'>
           <a href='https://www.linkedin.com/in/bill-liang' target="_blank" rel='noreferrer' className='capitalize text-gray-500 font-semibold'>linkedin<FontAwesomeIcon className='pl-[8px]' icon={faUpRightFromSquare} /></a>
         </div>
         <div className='flex flex-col md:flex-row justify-between relative'>
@@ -109,7 +109,7 @@ function ResumePage() {
             </div>
           </div>
           <div className='flex flex-col max-w-full md:max-w-[47%] relative'>
-            <h2 className='z-20 text-lightGray font-semibold my-5'>My Work Footprints</h2>
+            <h2 className='z-20 text-lightGray font-semibold mt-10 mb-5 md:my-5'>My Work Footprints</h2>
             <div className='z-20 flex flex-col'>     
               {
                 jobInfoData.map( (data, index) => {

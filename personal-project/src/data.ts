@@ -1,6 +1,27 @@
 import { faSquareJs, faPhp, faJava, faReact, faVuejs, faSquareGit, faNodeJs, faInvision, faFigma, faTrello } from '@fortawesome/free-brands-svg-icons';
 import { faCode, faDatabase, faFilePowerpoint, faGamepad } from '@fortawesome/free-solid-svg-icons';
 import typeScript from './assets/icon-typescript.svg';
+import billCoding from './assets/bill-coding.webp'
+import billPianoHand from './assets/bill-piano-hand.webp'
+import billSitReading from './assets/bill-sit-reading.webp'
+
+export const pageSelectionData = [
+  {
+    to: '/story',
+    img: billSitReading,
+    alt: 'Bill sitting and reading',
+  },
+  {
+    to: '/resume',
+    img: billCoding,
+    alt: 'Bill sitting and coding',
+  },
+  {
+    to: '/music',
+    img: billPianoHand,
+    alt: 'Bill playing the piano',
+  }
+]
 
 export const jobInfoData = [
   {
@@ -22,7 +43,6 @@ export const jobInfoData = [
     jobTitle: 'solution architect'
   },
 ]
-
 
 export const skillsetsData = [
   {
