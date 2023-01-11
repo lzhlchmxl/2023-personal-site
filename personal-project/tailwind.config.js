@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        lightGray: 'rgb(229 231 235)',
+        white: 'rgb(229 231 235)'
+      },
       keyframes: {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
@@ -37,6 +41,11 @@ module.exports = {
         fadeInFromRight: {
           from: { transform: 'translateX(50px)', opacity: '0'},
           to: { transform: 'translateX(0)',opacity: '1'}
+        },
+        flame: {
+          '0%': { height: '150px', width: '150px'},
+          '50%': { height: '149px', width: '149px'},
+          '100%': { height: '150px', width: '150px'},
         }
       },
       animation: {
@@ -47,6 +56,9 @@ module.exports = {
         shrink: 'shrink 3s ease-in-out 5s forwards',
         fadeInFromLeft: 'fadeInFromLeft 3s ease-out 7s forwards',
         fadeInFromRight: 'fadeInFromRight 3s ease-out 7s forwards',
+        flame: 'flame 0.1s infinite',
+        flameAfter: 'flame 0.3s infinite',
+        flameBefore: 'flame 0.09s infinite',
       },
     },
   },
