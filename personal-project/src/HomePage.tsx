@@ -112,9 +112,11 @@ function HomePage() {
                   className='relative flex group h-[calc(33%-2px)] justify-center'
                   to={data.to}
                 >
-                  <div className='flex self-center transition-all duration-1000 group-hover:cursor-pointer group-hover:opacity-100 opacity-0 absolute z-50 text-white bg-black/60 py-2 px-3 rounded-md text-2xl'>Aspiring Entreprenuer</div>
+                  {/* <div className='flex self-center transition-all duration-1000 group-hover:cursor-pointer group-hover:opacity-100 opacity-0 absolute z-50 text-white bg-black/60 py-2 px-3 rounded-md text-2xl capitalize'>{data.text}</div> */}
+                  <div className='flex self-center cursor-pointer opacity-100 absolute z-50 text-white bg-black/60 py-2 px-3 rounded-md text-2xl capitalize'>{data.text}</div>
                   <img 
-                    className='w-screen saturate-0 object-cover group-hover:saturate-100 transition-all duration-1000 group-hover:cursor-pointer'
+                    // className='w-screen saturate-0 object-cover group-hover:saturate-100 transition-all duration-1000 group-hover:cursor-pointer'
+                    className='w-screen object-cover cursor-pointer'
                     src={data.img}
                     alt={data.alt}
                   />

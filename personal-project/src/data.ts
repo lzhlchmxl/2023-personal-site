@@ -8,16 +8,19 @@ import billSitReading from './assets/bill-sit-reading.webp'
 export const pageSelectionData = [
   {
     to: '/story',
+    text: 'aspiring entrepreneur',
     img: billSitReading,
     alt: 'Bill sitting and reading',
   },
   {
     to: '/resume',
+    text: 'front-end engineer',
     img: billCoding,
     alt: 'Bill sitting and coding',
   },
   {
     to: '/music',
+    text: 'piano enthusiast',
     img: billPianoHand,
     alt: 'Bill playing the piano',
   }
