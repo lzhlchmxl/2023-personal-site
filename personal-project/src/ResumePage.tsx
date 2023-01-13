@@ -8,15 +8,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import logs from "./assets/logs.svg";
 import { useWindowDimensions } from './customHooks';
+import BackButton from './BackButton';
+import OpenToWorkLabel from './OpenToWorkLabel';
 
 function ResumePage() {
 
   const { width } = useWindowDimensions();
-
   const slidesToShow = width > 1280 ? 3 : width > 768 ? 2 : 1;
 
   return (
-    <div className='relative flex flex-col w-[80%] h-[90%] items-center'>
+    <div className='relative flex flex-col w-[80%] h-[90%] items-center top-[80px] md:top-[130px] max-w-[1000px]'>
+      <BackButton />
       <h1 className='text-white text-3xl'>Why work with Bill as a Front-end Engineer?</h1>
       <div className='flex flex-col sm:flex-row mt-10 items-center sm:items-stretch'>
         {/* value props left to the image */}
@@ -44,7 +46,8 @@ function ResumePage() {
           </div>
         </div>
         {/* center image */}
-        <div className='w-[90%] aspect-square sm:w-[200px] lg:w-[400px] overflow-hidden rounded-md'>
+        <div className='relative w-[90%] aspect-square sm:w-[200px] lg:w-[400px] overflow-hidden rounded-md'>
+          <OpenToWorkLabel />
           <img 
             src={billSmileCoding}
             alt='Bill smiling and coding'
@@ -184,7 +187,7 @@ function ResumePage() {
         
         {/* contact subsection */}
         <h2 className='text-lightGray font-semibold mt-10 mb-5'>Contact</h2>
-        <div className='flex text-lightGray h-[100px]'>
+        <div className='flex text-lightGray h-[150px]'>
           <p>Want to collaborate on something exciting? <a href='https://www.linkedin.com/in/bill-liang' rel='noreferrer' target='_blank' className='hover:underline text-gray-500 font-semibold px-1'>Connect with me on LinkedIn</a> and let's chat :D </p>
         </div>
       </div>

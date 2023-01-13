@@ -7,8 +7,10 @@ function App() {
 
   const { pathname } = useLocation();
 
+  document.title="Meet Bill"
+
   return (
-    <div className={`flex flex-col items-center justify-center bg-black overflow-y-auto ${pathname === '/' ? 'h-screen': ''}`}>
+    <div className={`flex flex-col items-center justify-center bg-black overflow-hidden ${pathname === '/' ? 'h-screen': ''}`}>
       <Header />
       <Outlet />
     </div>

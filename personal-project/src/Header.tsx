@@ -31,9 +31,9 @@ function Header() {
   const { pathname } = useLocation();
 
   return (
-    <div className={`${ pathname === '/' ? 'absolute top-0 h-[46px]' : 'relative h-[50px] md:h-[80px]' } flex w-full justify-center items-center mb-10 capitalize text-white`}>
+    <div className={`${ pathname === '/' ? 'absolute top-0 h-[46px]' : 'fixed h-[50px] md:h-[80px]' } z-[999] top-0 flex w-full justify-center items-center capitalize text-white`}>
       <div className='flex w-full justify-center items-center z-50 bg-black h-full'>
-        <div className={`flex justify-between items-center w-[80%] ${ pathname === '/' ? '' : 'max-w-[1000px]' } `}> 
+        <div className={`relative flex justify-between items-center w-[80%] ${ pathname === '/' ? '' : 'max-w-[1000px]' } `}> 
           <a href='https://www.linkedin.com/in/bill-liang' target="_blank" rel='noreferrer'>bill l.</a>
           <div className={`${ pathname === '/' ? 'md:hidden' : '' } hidden md:flex`}>
             <NavLink to={'/'} className='hover:underline' >home</NavLink>
@@ -58,7 +58,7 @@ function Header() {
         ref={menuRef}
         onClick={ () => setMenuToggle(false)}
       >
-        <NavLink to={'/'} className='hover:bg-lightGray/20 py-1' ><span className="ml-[10%]">home</span></NavLink>
+        <NavLink to={'/'} className='hover:bg-lightGray/20 pb-1 pt-2' ><span className="ml-[10%]">home</span></NavLink>
         <NavLink to={'/story'} className='hover:bg-lightGray/20 py-1'><span className="ml-[10%]">story</span></NavLink>
         <NavLink to={'/resume'} className='hover:bg-lightGray/20 py-1'><span className="ml-[10%]">resume</span></NavLink>
         <NavLink to={'/music'} className='hover:bg-lightGray/20 py-1 border-b-[1px] border-lightGray/10'><span className="ml-[10%]">music</span></NavLink>

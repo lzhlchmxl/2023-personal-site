@@ -6,6 +6,7 @@ import { isMobile } from './assets/utilities'
 import ConnectionCircle from './ConnectionCircle'
 import { useWindowDimensions } from './customHooks'
 import { pageSelectionData } from './data'
+import OpenToWorkLabel from './OpenToWorkLabel'
 
 function HomePage() {
 
@@ -26,13 +27,6 @@ function HomePage() {
       {
         width > 1024 ?
         <div className="relative flex w-[80%] h-[90%] justify-center">
-          {/* <div className={`${typingClassName} top-0 animate-typing1`}>
-            <p>Hi, I'm Bill, a Frontend Software Engineer.</p>
-          </div>
-          <div className={`${typingClassName} top-10 animate-typing2`}>
-            <p>Welcome to my personal site :)</p>
-          </div> */}
-
           {/* left photo */}
           <Link 
             className='relative flex justify-center items-center group'
@@ -62,6 +56,7 @@ function HomePage() {
             className='relative animate-shrink w-[900px] group'
             to={'/resume'}
           >
+            <OpenToWorkLabel />
             <div className='absolute bottom-0 w-full h-1/2'>
               <div className='absolute top-0 w-full h-1/2 flex justify-center items-center'>
                 <div className='transition-all duration-1000 group-hover:cursor-pointer group-hover:opacity-100 opacity-0 z-40 absolute left-[-2px] top-[-2px] w-[calc(50%+4px)] h-[calc(50%-22px)] border-[2px] border-lightGray border-b-0 border-l-0'></div>
@@ -150,6 +145,7 @@ function HomePage() {
                           e.preventDefault();
                         }}
                       >
+                        {index === 1 && <OpenToWorkLabel />}
                         <div className={`opacity-100 self-center cursor-pointer group-focus:opacity-0 absolute z-40 text-white bg-black/60 py-2 px-3 rounded-md text-2xl capitalize transition-all duration-500`}>{data.text}</div>
                         <img 
                           className={`saturate-0 transition-all duration-1000 w-screen object-cover cursor-pointer group-focus:saturate-100 `}
@@ -163,6 +159,7 @@ function HomePage() {
                       className='relative flex justify-center'
                       to={data.to}
                     >
+                      {index === 1 && <OpenToWorkLabel />}
                       <div className={`opacity-0 self-center cursor-pointer group-hover:opacity-100 absolute z-50 text-white bg-black/60 py-2 px-3 rounded-md text-2xl capitalize transition-all duration-500`}>{data.text}</div>
                       <img 
                         className={`saturate-0 transition-all duration-700 w-screen object-cover cursor-pointer group-hover:saturate-100 `}
