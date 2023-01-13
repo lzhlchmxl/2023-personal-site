@@ -14,7 +14,7 @@ function Footer() {
           className="absolute hover:cursor-pointer right-0"
           href='https://www.linkedin.com/in/bill-liang' target="_blank" rel='noreferrer'
         >
-          <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+          <FontAwesomeIcon icon={faLinkedin} /> <span className="hidden sm:inline-block">LinkedIn</span>
         </a>
       </div>
     </div>
