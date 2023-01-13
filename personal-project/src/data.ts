@@ -49,7 +49,7 @@ export const jobInfoData = [
 
 export const skillsetsData = [
   {
-    title: 'core programing',
+    title: 'core programming',
     description: 'I take pride in my code. I aim to deliver clean, easy-to-read and efficient code to the best of my abilities.',
     icons: [{icon: faSquareJs, description: 'JavaScript'}, {icon: typeScript, description: 'TypeScript'}, {icon: faPhp, description: 'PHP'}, {icon: faJava, description: 'Java'}, ],
   },
@@ -70,7 +70,7 @@ export const skillsetsData = [
   },
   {
     title: 'user interface',
-    description: 'I have minimum viable UI experience. With a given design, I aim to deliver pixel-perfect results.',
+    description: 'I like to play with designs for personal projects. With a given design, I aim to deliver pixel-perfect results.',
     icons: [{icon: faInvision, description: 'Invision'}, {icon: faFigma, description: 'Figma'}, ],
   },
   {

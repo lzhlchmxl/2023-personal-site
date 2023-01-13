@@ -155,6 +155,9 @@ function ResumePage() {
         <h2 className='text-lightGray font-semibold mt-10 mb-5'>My Skillsets</h2>
         <Carousel 
           slidesToShow={slidesToShow}
+          autoplay={true}
+          autoplayInterval={5000}
+          wrapAround={true}
           renderCenterLeftControls={({ previousDisabled }) => (
             <button disabled={previousDisabled}></button>
           )}

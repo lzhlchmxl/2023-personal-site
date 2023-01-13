@@ -31,10 +31,11 @@ function Header() {
   const { pathname } = useLocation();
 
   return (
-    <div className={`${ pathname === '/' ? 'absolute top-0 h-[46px]' : 'fixed h-[50px] md:h-[80px]' } z-[999] top-0 flex w-full justify-center items-center capitalize text-white`}>
+    <div className={`${ pathname === '/' ? 'absolute top-0' : 'fixed md:h-[80px]' }  h-[46px] z-[999] top-0 flex w-full justify-center items-center capitalize text-white`}>
       <div className='flex w-full justify-center items-center z-50 bg-black h-full'>
         <div className={`relative flex justify-between items-center w-[80%] ${ pathname === '/' ? '' : 'max-w-[1000px]' } `}> 
-          <a href='https://www.linkedin.com/in/bill-liang' target="_blank" rel='noreferrer'>bill l.</a>
+          {/* <a href='https://www.linkedin.com/in/bill-liang' target="_blank" rel='noreferrer'>bill l.</a> */}
+          <NavLink to={'/'} >bill l.</NavLink>
           <div className={`${ pathname === '/' ? 'md:hidden' : '' } hidden md:flex`}>
             <NavLink to={'/'} className='hover:underline' >home</NavLink>
             <NavLink to={'/story'} className='ml-5 hover:underline'>story</NavLink>
