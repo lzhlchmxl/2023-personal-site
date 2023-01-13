@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import billAgainstWall from './assets/bill-against-wall.webp'
 import billCoding from './assets/bill-coding.webp'
 import billPianoHand from './assets/bill-piano-hand.webp'
+import { isMobile } from './assets/utilities'
 import ConnectionCircle from './ConnectionCircle'
 import { useWindowDimensions } from './customHooks'
 import { pageSelectionData } from './data'
@@ -14,6 +15,7 @@ function HomePage() {
   //                         mx-auto my-0 z-10 opacity-0`
 
   const { width } = useWindowDimensions();
+  const navigate = useNavigate();
 
   const photosClassName = `w-full h-full max-h-[1500px] max-w-[1000px] saturate-0 object-cover
                             group-hover:saturate-100 transition-all duration-1000 group-hover:cursor-pointer`
@@ -103,24 +105,73 @@ function HomePage() {
           </Link>
         </div>
         :
-        <div className='absolute flex flex-col top-[46px] h-[calc(100vh-46px)] justify-between'>
+        <div 
+          className='absolute flex flex-col top-[46px] h-[calc(100vh-46px)] justify-between overflow-hidden'
+        >
           {
             pageSelectionData.map( (data, index) => {
               return (
-                <Link 
+                <div
+                  tabIndex={index}
                   key={index}
-                  className='relative flex group h-[calc(33%-2px)] justify-center'
-                  to={data.to}
+                  className='relative flex group h-[calc(33%-2px)]'
+                  onClick={ (e) => {
+                    e.currentTarget.focus();
+                  }}
                 >
-                  {/* <div className='flex self-center transition-all duration-1000 group-hover:cursor-pointer group-hover:opacity-100 opacity-0 absolute z-50 text-white bg-black/60 py-2 px-3 rounded-md text-2xl capitalize'>{data.text}</div> */}
-                  <div className='flex self-center cursor-pointer opacity-100 absolute z-50 text-white bg-black/60 py-2 px-3 rounded-md text-2xl capitalize'>{data.text}</div>
-                  <img 
-                    // className='w-screen saturate-0 object-cover group-hover:saturate-100 transition-all duration-1000 group-hover:cursor-pointer'
-                    className='w-screen object-cover cursor-pointer'
-                    src={data.img}
-                    alt={data.alt}
-                  />
-                </Link>
+                  {    
+                    isMobile() 
+                    ?
+                    <>
+                      <div 
+                        onClick={() => {
+                          navigate(data.to)
+                        }}
+                        className='flex absolute w-[50vw] h-full justify-center items-center transition-all 
+                                      duration-700 left-[-50%] group-focus:left-0 z-50 bg-lightGray/10 border-r-[1px] border-black/10'
+                      >
+                        <div className='uppercase text-white text-md font-semibold'>view</div>
+                      </div>
+                      <div
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          e.currentTarget.parentElement?.blur();
+                        }}  
+                        className='flex absolute w-[50vw] h-full justify-center items-center transition-all 
+                                      duration-700 right-[-50%] group-focus:right-0 z-50 bg-lightGray/10 border-l-[1px] border-black/10'
+                      >
+                        <div className='uppercase text-white text-md font-semibold'>cancel</div>
+                      </div>
+                      <Link 
+                        key={index}
+                        className='flex h-full justify-center'
+                        to={data.to}
+                        onClick={ (e) => {
+                          e.preventDefault();
+                        }}
+                      >
+                        <div className={`opacity-100 self-center cursor-pointer group-focus:opacity-0 absolute z-40 text-white bg-black/60 py-2 px-3 rounded-md text-2xl capitalize transition-all duration-500`}>{data.text}</div>
+                        <img 
+                          className={`saturate-0 transition-all duration-1000 w-screen object-cover cursor-pointer group-focus:saturate-100 `}
+                          src={data.img}
+                          alt={data.alt}
+                        />
+                      </Link>
+                    </>
+                    :        
+                    <Link 
+                      className='relative flex justify-center'
+                      to={data.to}
+                    >
+                      <div className={`opacity-0 self-center cursor-pointer group-hover:opacity-100 absolute z-50 text-white bg-black/60 py-2 px-3 rounded-md text-2xl capitalize transition-all duration-500`}>{data.text}</div>
+                      <img 
+                        className={`saturate-0 transition-all duration-700 w-screen object-cover cursor-pointer group-hover:saturate-100 `}
+                        src={data.img}
+                        alt={data.alt}
+                      />
+                    </Link>
+                  }
+                </div>
               )
             })
           }
