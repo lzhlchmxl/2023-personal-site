@@ -4,6 +4,13 @@ import typeScript from './assets/icon-typescript.svg';
 import billCoding from './assets/bill-coding.webp'
 import billPianoHand from './assets/bill-piano-hand.webp'
 import billSitReading from './assets/bill-sit-reading.webp'
+import pathetique from './assets/pathetique.mp4';
+import SAO from './assets/SAO-ost.mp4';
+
+export const videos = [
+  {url: pathetique, title: "Beethoven's Pathetique 3rd Movement [improv]"},
+  {url: SAO, title: "Sword Art Online - OST [improv]"},
+]
 
 export const pageSelectionData = [
   {
@@ -41,7 +48,7 @@ export const jobInfoData = [
   },
   {
     duration: '2018-2019', 
-    companyName: 'university of fredericton', 
+    companyName: 'UFred', 
     companyAddress: 'fredericton, NB', 
     jobTitle: 'solution architect'
   },

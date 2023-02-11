@@ -17,13 +17,13 @@ function ResumePage() {
   const slidesToShow = width > 1280 ? 3 : width > 768 ? 2 : 1;
 
   return (
-    <div className='relative flex flex-col w-[80%] h-[90%] items-center top-[80px] md:top-[130px] max-w-[1000px]'>
+    <div className='relative flex flex-col w-[80%] h-[90%] items-center mt-[80px] md:mt-[130px] max-w-[1000px]'>
       <BackButton />
       <h1 className='text-white text-3xl'>Why work with Bill as a Front-end Engineer?</h1>
       <div className='flex flex-col sm:flex-row mt-10 items-center sm:items-stretch'>
         {/* value props left to the image */}
         <div
-          className='hidden md:flex flex-col justify-around'
+          className='hidden md:flex flex-col justify-around z-10'
         >
           {/* top left value prop */}
           <div className='translate-y-[-25px] lg:translate-y-0 flex flex-col max-w-[300px]'>

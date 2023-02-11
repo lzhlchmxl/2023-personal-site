@@ -9,6 +9,9 @@ module.exports = {
         lightGray: 'rgb(229 231 235)',
         white: 'rgb(229 231 235)'
       },
+      boxShadow: {
+        customImage: '0 0 10px 10px black inset'
+      },
       keyframes: {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
