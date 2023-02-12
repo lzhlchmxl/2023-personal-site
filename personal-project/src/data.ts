@@ -8,8 +8,8 @@ import pathetique from './assets/pathetique.mp4';
 import SAO from './assets/SAO-ost.mp4';
 
 export const videos = [
-  {url: pathetique, title: "Beethoven's Pathetique 3rd Movement [improv]"},
-  {url: SAO, title: "Sword Art Online - OST [improv]"},
+  {url: pathetique, title: "Beethoven's Pathetique 3rd Movement"},
+  {url: SAO, title: "Sword Art Online - OST"},
 ]
 
 export const pageSelectionData = [

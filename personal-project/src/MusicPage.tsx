@@ -4,10 +4,13 @@ import { useRef, useState } from "react";
 import { videos } from "./data";
 import billHoldingDog from "./assets/bill_holding_dog_sitting.jpg";
 // import billPianoSymmetrical from "./assets/bill-piano-symmetrical.webp";
+import { faList, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function MusicPage() {
 
   const playerRef = useRef<ReactPlayer>(null);
+  const [isFirstVisit, setIsFirstVisit] = useState(true);
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
 
   // const handleSeek = () => {
@@ -16,26 +19,51 @@ function MusicPage() {
   //   }
   // };
 
+  const [playListOpen, setPlayListOpen] = useState(false);
+
   return (
     <div className="flex flex-col w-[80%] items-center relative text-white mb-10 rounded-md max-w-[1000px] mt-[80px] md:mt-[130px]">
       <BackButton />
       <h1 className='text-white text-3xl'>My Music &#183; Passion and Expression</h1>
       <div
-        className="flex mt-10 justify-between w-[100%]"
+        className="flex mt-10 justify-between w-[100%] relative"
       >
-        <ReactPlayer  
-          ref={playerRef} 
-          controls 
-          url={videos[activeVideoIndex].url} 
-          // onReady={handleSeek}
+        <div
+          className="w-full lg:w-[47%] z-10"
+        >
+          <ReactPlayer  
+            width={'100%'}
+            ref={playerRef} 
+            controls
+            playing={!isFirstVisit}
+            url={videos[activeVideoIndex].url} 
+            // onReady={handleSeek}
+          />
+        </div>
+        <FontAwesomeIcon
+          className={`
+            hover:bg-opacity-10
+            flex lg:hidden absolute hover:cursor-pointer w-[16px] h-[16px]
+           bg-white  rounded-full p-2 bg-opacity-0 
+            top-1 sm:top-5 right-1 sm:right-1 z-30 transition-all
+          `}
+          icon={playListOpen ? faXmark : faList}
+          onClick={ () => setPlayListOpen(!playListOpen)}
         />
-        <div className="flex flex-col items-start">
+        <div 
+          className={`absolute lg:static
+            bg-black w-full h-full ${ playListOpen ? "opacity-90 z-20" : "opacity-0 z-0" }
+            flex flex-col items-start lg:w-[47%] lg:opacity-100 transition-all`}
+        >
           {
             videos.map( (video, index) => {
               return <button
-                className="hover:underline"
+                className="pl-1 sm:pl-5 first-of-type:mt-10 select-none w-full text-left hover:bg-white hover:bg-opacity-10"
                 key={video.title}
-                onClick={() => setActiveVideoIndex(index)}
+                onClick={() => {
+                  setActiveVideoIndex(index);
+                  setIsFirstVisit(false);
+                }}
               >
                 {`${index + 1}. ${video.title}`}
               </button>
