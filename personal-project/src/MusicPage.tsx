@@ -16,7 +16,7 @@ function MusicPage() {
   const [playListOpen, setPlayListOpen] = useState(false);
 
   return (
-    <div className="flex flex-col w-[80%] items-center relative text-white mb-10 rounded-md max-w-[1000px] mt-[80px] md:mt-[130px]">
+    <div className="flex flex-col grow w-[80%] items-center relative text-white mb-10 rounded-md max-w-[1000px] mt-[80px] md:mt-[130px]">
       <BackButton />
       <h1 className='text-white text-3xl'>My Music &#183; Passion and Expression</h1>
       <div
