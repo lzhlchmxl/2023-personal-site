@@ -6,10 +6,18 @@ import billPianoHand from './assets/bill-piano-hand.webp'
 import billSitReading from './assets/bill-sit-reading.webp'
 import pathetique from './assets/pathetique.mp4';
 import SAO from './assets/SAO-ost.mp4';
+import forward from './assets/forward.mp4'
+import ourLove from './assets/our-love.mp4';
+import lydia from './assets/lydia.mp4';
+import unknownTitle from './assets/famous-unkown-title.mp4';
 
 export const videos = [
-  {url: pathetique, title: "Beethoven's Pathetique 3rd Movement"},
-  {url: SAO, title: "Sword Art Online - OST"},
+  {url: pathetique, title: "Beethoven's Pathetique 3rd Movement '21 [rearranged]"},
+  {url: SAO, title: "Sword Art Online - OST '18 [improv]"},
+  {url: forward, title: "Forward! '22 [original]"},
+  {url: ourLove, title: "Our Love/我们的爱 '18 [rearranged]"},
+  {url: unknownTitle, title: "Unknown Title '18 [improv]"},
+  {url: lydia, title: "Lydia '18 [rearranged]"},
 ]
 
 export const pageSelectionData = [

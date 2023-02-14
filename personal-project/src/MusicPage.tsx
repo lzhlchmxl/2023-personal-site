@@ -3,8 +3,8 @@ import BackButton from "./BackButton";
 import { useRef, useState } from "react";
 import { videos } from "./data";
 import billHoldingDog from "./assets/bill_holding_dog_sitting.jpg";
-// import billPianoSymmetrical from "./assets/bill-piano-symmetrical.webp";
-import { faList, faXmark } from "@fortawesome/free-solid-svg-icons";
+// import billPianoSymmetrical from "./assets/billPianoSymmetrical.webp";
+import { faList, faXmark, faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function MusicPage() {
@@ -12,13 +12,7 @@ function MusicPage() {
   const playerRef = useRef<ReactPlayer>(null);
   const [isFirstVisit, setIsFirstVisit] = useState(true);
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
-
-  // const handleSeek = () => {
-  //   if(playerRef.current) {
-  //     playerRef.current.seekTo(25);
-  //   }
-  // };
-
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [playListOpen, setPlayListOpen] = useState(false);
 
   return (
@@ -35,17 +29,18 @@ function MusicPage() {
             width={'100%'}
             ref={playerRef} 
             controls
-            playing={!isFirstVisit}
+            playing={!isFirstVisit && isVideoPlaying}
             url={videos[activeVideoIndex].url} 
-            // onReady={handleSeek}
+            onPlay={() => setIsVideoPlaying(true)}
+            onPause={() => setIsVideoPlaying(false)}
+            onEnded={() => setPlayListOpen(true)}
           />
         </div>
         <FontAwesomeIcon
           className={`
-            hover:bg-opacity-10
+            hover:bg-opacity-20 bg-white bg-opacity-10 
             flex lg:hidden absolute hover:cursor-pointer w-[16px] h-[16px]
-           bg-white  rounded-full p-2 bg-opacity-0 
-            top-1 sm:top-5 right-1 sm:right-1 z-30 transition-all
+            rounded-full p-2 top-1 sm:top-5 right-1 sm:right-1 z-30 transition-all
           `}
           icon={playListOpen ? faXmark : faList}
           onClick={ () => setPlayListOpen(!playListOpen)}
@@ -53,18 +48,31 @@ function MusicPage() {
         <div 
           className={`absolute lg:static
             bg-black w-full h-full ${ playListOpen ? "opacity-90 z-20" : "opacity-0 z-0" }
-            flex flex-col items-start lg:w-[47%] lg:opacity-100 transition-all`}
+            flex flex-col items-start lg:w-[47%] lg:opacity-100 transition-all
+            pt-3
+            `}
         >
           {
             videos.map( (video, index) => {
               return <button
-                className="pl-1 sm:pl-5 first-of-type:mt-10 select-none w-full text-left hover:bg-white hover:bg-opacity-10"
+                className={`pl-2 py-2 sm:pl-5 first-of-type:mt-10 select-none w-full text-left 
+                  ${ index === activeVideoIndex ? 
+                    "bg-white bg-opacity-10" 
+                    : 
+                    "hover:bg-white hover:bg-opacity-10"
+                  }
+                `}
                 key={video.title}
                 onClick={() => {
                   setActiveVideoIndex(index);
                   setIsFirstVisit(false);
+                  setIsVideoPlaying(index === activeVideoIndex ? !isVideoPlaying : true);
                 }}
               >
+                <FontAwesomeIcon 
+                  icon={(index === activeVideoIndex && isVideoPlaying) ? faPause : faPlay} 
+                  className="pr-2 w-[10px]"
+                />
                 {`${index + 1}. ${video.title}`}
               </button>
             })
@@ -74,14 +82,15 @@ function MusicPage() {
       <div className='flex items-center overflow-hidden w-full max-w-[1000px] mt-10 flex-col md:flex-row justify-between relative'>
           <div className='flex flex-col max-w-full md:max-w-[47%]'>
             <h2 className='text-lightGray font-semibold my-5'>Side Story</h2>       
-            <div className='z-20 flex flex-col text-white mb-5 
+            <div className={`z-20 flex flex-col text-white mb-5 `}>
+              {/* 
+              A text-over background image approach 
               before:flex before:sm:hidden
               before:content-[""] before:h-full before:w-full
               before:absolute before:z-[-10] before:shadow-customImage
               before:bg-[url("./assets/bill-piano-symmetrical.webp")]
               before:bg-cover before:opacity-40
-              before:bg-center
-            '>
+              before:bg-center */}
               <p>When I was a young child, I had this "mission" to spread more music in the world. </p>
               <br />
               <p>
@@ -98,7 +107,7 @@ function MusicPage() {
               </p>
             </div>
           </div>
-          <div className='hidden mt-5 sm:flex md:mt-0 flex-col max-w-full md:max-w-[47%] relative'>
+          <div className='mt-5 flex md:mt-0 flex-col max-w-full md:max-w-[47%] relative'>
             <img
               className="drop-shadow-md"
               src={billHoldingDog}
