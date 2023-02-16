@@ -101,7 +101,7 @@ function HomePage() {
         </div>
         :
         <div 
-          className='absolute flex flex-col top-[46px] h-[calc(100vh-46px)] justify-between overflow-hidden'
+          className='absolute flex flex-col top-[45px] h-[calc(100%-45px)] justify-between overflow-hidden'
         >
           {
             pageSelectionData.map( (data, index) => {

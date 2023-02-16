@@ -31,7 +31,7 @@ function Header() {
   const { pathname } = useLocation();
 
   return (
-    <div className={`${ pathname === '/' ? 'absolute top-0' : 'fixed md:h-[80px]' }  h-[46px] z-[999] top-0 flex w-full justify-center items-center capitalize text-white`}>
+    <div className={`${ pathname === '/' ? 'absolute top-0' : 'fixed md:h-[80px]' }  h-[45px] z-[999] top-0 flex w-full justify-center items-center capitalize text-white`}>
       <div className='flex w-full justify-center items-center z-50 bg-black h-full'>
         <div className={`relative flex justify-between items-center w-[80%] ${ pathname === '/' ? '' : 'max-w-[1000px]' } `}> 
           {/* <a href='https://www.linkedin.com/in/bill-liang' target="_blank" rel='noreferrer'>bill l.</a> */}
@@ -52,10 +52,10 @@ function Header() {
           </div>
         </div>
       </div>
-      <div className={`${ pathname === '/' ? 'h-[1px] bg-white/25' : 'h-[2px] bg-lightGray/10' } absolute w-full bottom-[-2px] z-50`}></div>
+      <div className={`h-[1px] bg-white/25 absolute w-full bottom-[-1px] z-50`}></div>
       {/* collapsible menu for small screens */}
       <div 
-        className={`absolute flex flex-col w-full transition-all ${menuToggle ? pathname === '/' ? 'top-[46px]' : 'top-[50px]' : 'top-[-85px]'} bg-black z-40`}
+        className={`absolute flex flex-col w-full transition-all ${menuToggle ? 'top-[45px]' : 'top-[-90px]'} bg-black z-40`}
         ref={menuRef}
         onClick={ () => setMenuToggle(false)}
       >
