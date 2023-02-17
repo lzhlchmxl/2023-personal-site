@@ -8,8 +8,6 @@ function App() {
 
   const { pathname } = useLocation();
 
-  document.title="Meet Bill"
-
   return (
     <div className={`min-h-full flex flex-col items-center justify-center bg-black overflow-hidden ${pathname === '/' ? 'h-screen': ''}`}>
       <Header />
