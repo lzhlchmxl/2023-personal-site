@@ -52,7 +52,7 @@ export const jobInfoData = [
     duration: '2019-2020', 
     companyName: 'blockGen corp | chosen plaintext consulting inc.', 
     companyAddress: 'miami, FL', 
-    jobTitle: 'frontend developer'
+    jobTitle: 'lead frontend developer'
   },
   {
     duration: '2018-2019', 
