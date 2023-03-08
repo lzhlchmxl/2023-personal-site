@@ -19,7 +19,7 @@ function ResumePage() {
   return (
     <div className='relative flex flex-col w-[80%] h-[90%] items-center mt-[80px] md:mt-[130px] max-w-[1000px]'>
       <BackButton />
-      <h1 className='text-white text-3xl'>Why work with Bill as a Front-end Engineer?</h1>
+      <h1 className='text-white text-3xl'>Why work with Bill as a Full Stack Developer?</h1>
       <div className='flex flex-col sm:flex-row mt-10 items-center sm:items-stretch'>
         {/* value props left to the image */}
         <div
@@ -27,7 +27,7 @@ function ResumePage() {
         >
           {/* top left value prop */}
           <div className='translate-y-[-25px] lg:translate-y-0 flex flex-col max-w-[300px]'>
-            <p className='text-white mb-1 text-lg'>4 years of modern <span className='text-orange-500 font-semibold'>custom UI</span> experience with web frameworks.</p>
+            <p className='text-white mb-1 text-lg'>4 years of <span className='text-orange-500 font-semibold'>custom web development</span> experience with modern frameworks.</p>
             <div className='flex self-end relative w-2/3'>
               <div className='w-[40px] h-[20px] border-[1px] border-lightGray border-l-0 border-b-0 z-20'></div>
               <ConnectionCircle l='left-[-8px]' t='top-[-8px]'/>

@@ -60,7 +60,7 @@ function HomePage() {
             <div className='absolute bottom-0 w-full h-1/2'>
               <div className='absolute top-0 w-full h-1/2 flex justify-center items-center'>
                 <div className='transition-all duration-1000 group-hover:cursor-pointer group-hover:opacity-100 opacity-0 z-40 absolute left-[-2px] top-[-2px] w-[calc(50%+4px)] h-[calc(50%-22px)] border-[2px] border-lightGray border-b-0 border-l-0'></div>
-                <div className='transition-all duration-1000 group-hover:cursor-pointer group-hover:opacity-100 opacity-0 absolute z-50 text-white bg-black/60 py-2 px-3 rounded-md text-2xl whitespace-nowrap'>Front-end Engineer</div>
+                <div className='transition-all duration-1000 group-hover:cursor-pointer group-hover:opacity-100 opacity-0 absolute z-50 text-white bg-black/60 py-2 px-3 rounded-md text-2xl whitespace-nowrap'>Full Stack Developer</div>
                 <div className='transition-all duration-1000 group-hover:cursor-pointer group-hover:opacity-100 opacity-0 z-40 absolute right-[-2px] bottom-[-2px] w-[calc(50%+4px)] h-[calc(50%-22px)] border-[2px] border-lightGray border-t-0 border-r-0'></div>
               </div>
             </div>
