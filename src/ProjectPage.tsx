@@ -1,14 +1,14 @@
 import { NavLink } from "react-router-dom";
 import BackButton from "./BackButton";
 
-function StoryPage() {
+function ProjectPage() {
 
   return (
     <div className="flex flex-col grow relative text-white mb-10 rounded-md max-w-[1000px] w-[80%] mt-[80px] md:mt-[130px]">
       <BackButton />
-      <p className="mt-5">This is the story page.</p>
+      <p className="mt-5">This is the projects page.</p>
       <br/>
-      <p>It will show my story and my entreprenuerial journey.</p>
+      <p>It will show my projects and my entreprenuerial journey.</p>
       <br/>
       <p>Still under construction at the moment. 
         Why not
@@ -23,4 +23,4 @@ function StoryPage() {
   )
 }
 
-export default StoryPage;
+export default ProjectPage;

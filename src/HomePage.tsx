@@ -10,11 +10,6 @@ import OpenToWorkLabel from './OpenToWorkLabel'
 
 function HomePage() {
 
-  // * Initial animated typing-like text display *
-  // const typingClassName = `
-  //                         absolute left-10 text-white overflow-hidden whitespace-nowrap 
-  //                         mx-auto my-0 z-10 opacity-0`
-
   const { width } = useWindowDimensions();
   const navigate = useNavigate();
 
@@ -30,10 +25,10 @@ function HomePage() {
           {/* left photo */}
           <Link 
             className='relative flex justify-center items-center group'
-            to={'/story'}
+            to={'/projects'}
           >
-            <div className='transition-all duration-1000 group-hover:cursor-pointer group-hover:opacity-100 opacity-0 absolute z-50 text-white bg-black/60 py-2 px-3 rounded-md text-2xl whitespace-nowrap'>Aspiring Entreprenuer</div>
-            <div className='transition-all duration-1000 group-hover:cursor-pointer group-hover:opacity-100 opacity-0 absolute h-[2px] z-40 bg-lightGray w-[calc(50%-128px)] right-0'></div>
+            <div className='transition-all duration-1000 group-hover:cursor-pointer group-hover:opacity-100 opacity-0 absolute z-50 text-white bg-black/60 py-2 px-3 rounded-md text-2xl whitespace-nowrap'>Idea Builder</div>
+            <div className='transition-all duration-1000 group-hover:cursor-pointer group-hover:opacity-100 opacity-0 absolute h-[2px] z-40 bg-lightGray w-[calc(50%-75px)] right-0'></div>
             <img 
               className={`${photosClassName} animate-fadeInFromLeft opacity-0`}
               src={billAgainstWall}

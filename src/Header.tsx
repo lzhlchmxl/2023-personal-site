@@ -38,7 +38,7 @@ function Header() {
           <NavLink to={'/'} >bill l.</NavLink>
           <div className={`${ pathname === '/' ? 'md:hidden' : '' } hidden md:flex`}>
             <NavLink to={'/'} className='hover:underline' >home</NavLink>
-            <NavLink to={'/story'} className='ml-5 hover:underline'>story</NavLink>
+            <NavLink to={'/projects'} className='ml-5 hover:underline'>projects</NavLink>
             <NavLink to={'/resume'} className='ml-5 hover:underline'>resume</NavLink>
             <NavLink to={'/music'} className='ml-5 hover:underline'>music</NavLink>
           </div>
@@ -60,7 +60,7 @@ function Header() {
         onClick={ () => setMenuToggle(false)}
       >
         <NavLink to={'/'} className='hover:bg-lightGray/20 pb-1 pt-2' ><span className="ml-[10%]">home</span></NavLink>
-        <NavLink to={'/story'} className='hover:bg-lightGray/20 py-1'><span className="ml-[10%]">story</span></NavLink>
+        <NavLink to={'/projects'} className='hover:bg-lightGray/20 py-1'><span className="ml-[10%]">projects</span></NavLink>
         <NavLink to={'/resume'} className='hover:bg-lightGray/20 py-1'><span className="ml-[10%]">resume</span></NavLink>
         <NavLink to={'/music'} className='hover:bg-lightGray/20 py-1 border-b-[1px] border-lightGray/10'><span className="ml-[10%]">music</span></NavLink>
       </div>

@@ -22,14 +22,14 @@ export const videos = [
 
 export const pageSelectionData = [
   {
-    to: '/story',
-    text: 'aspiring entrepreneur',
+    to: '/projects',
+    text: 'idea builder',
     img: billSitReading,
     alt: 'Bill sitting and reading',
   },
   {
     to: '/resume',
-    text: 'front-end engineer',
+    text: 'full stack developer',
     img: billCoding,
     alt: 'Bill sitting and coding',
   },
