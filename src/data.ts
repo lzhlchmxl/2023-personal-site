@@ -12,6 +12,8 @@ import lydia from './assets/lydia.mp4';
 import unknownTitle from './assets/famous-unkown-title.mp4';
 import websiteReviwerDemo from './assets/website-reviewer-demo.mp4';
 import websiteReviwerCover from './assets/website-reviewer-cover.png';
+import personalWebsiteCover from './assets/personal-website-cover.png';
+import recipeRandomizationAppCover from './assets/recipe-randomization-app-cover.png';
 
 export const musicVideos = [
   {url: pathetique, title: "Beethoven's Pathetique 3rd Movement '21 [rearranged]"},
@@ -112,7 +114,7 @@ export const projectsData = [
     title: 'website reviewer',
     description: 'An MVP web-app that allow user to create notes and save reviews on a snapshot of any given website.',
     coverImg: websiteReviwerCover,
-    coverImgAlt: 'cover photo of website reviwer mvp',
+    coverImgAlt: 'cover photo for website reviwer mvp',
     demo: websiteReviwerDemo,
     codeLink: 'https://github.com/lzhlchmxl/website-reviewer-mvp',
     technologies: {
@@ -121,6 +123,36 @@ export const projectsData = [
       database: 'JSON file (temp)',
       hosting: 'Local',
       cicd: 'Not supported',
+    }
+  },
+  {
+    title: 'personal website',
+    description: 'This very web-app you are looking at right now :)',
+    coverImg: personalWebsiteCover,
+    coverImgAlt: 'cover photo for personal website',
+    demo: null,
+    codeLink: 'https://github.com/lzhlchmxl/2023-personal-site',
+    technologies: {
+      frontend: 'React + Typescript + tailwind',
+      backend: 'N/A',
+      database: 'N/A',
+      hosting: 'AWS S3 + CloudFront',
+      cicd: 'AWS CodePipeline',
+    }
+  },
+  {
+    title: 'recipe randomization app',
+    description: 'A mobile web-app that provides convenience for home-cooking couples to decide on a reasonable meal plan. It offers a one-button-click solution to generate a randomized meal plan that fits the input parameters (eg. prep time, ingradients, etc.)',
+    coverImg: recipeRandomizationAppCover,
+    coverImgAlt: 'cover photo for recipe randomization app',
+    demo: null,
+    codeLink: 'https://github.com/lzhlchmxl/recipe-randomization-app',
+    technologies: {
+      frontend: 'React + Typescript + tailwind',
+      backend: 'Node.js',
+      database: 'JSON file (temp)',
+      hosting: 'AWS EC2',
+      cicd: 'Not Supported',
     }
   }
 ]

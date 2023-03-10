@@ -29,8 +29,8 @@ export default function ProjectCard({
 {
   title: string;
   description: string;
-  demo: any; // [TODO] MP4 file
-  coverImg: any; //[TODO] image file
+  demo: string | null;
+  coverImg: string; 
   coverImgAlt: string,
   codeLink: string,
   technologies: {
@@ -49,8 +49,12 @@ export default function ProjectCard({
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const x = e.clientX;
     const {left, width} = e.currentTarget.getClientRects()[0];
-    if (x < left + width/2) { // clicking the 'watch demo' button
-      setIsModalOpen(true);
+    if (x < left + width / 2) { // clicking the 'watch demo' button
+      if (demo === null) {
+        window.alert('There is no demo video for this project yet.');
+      } else {
+        setIsModalOpen(true);
+      }
     } else { // clicking the 'view code' button
       window.open(codeLink, "_blank");
     }
@@ -111,7 +115,7 @@ export default function ProjectCard({
         :
         <>
           <p className="capitalize px-5"> Title: {title}</p>
-          <p className="capitalize px-5 pb-5">Description: {description}</p>
+          <p className="px-5 pb-5">Description: {description}</p>
         </>
       }
       <Modal
@@ -130,7 +134,7 @@ export default function ProjectCard({
             width={'100%'}
             controls
             playing
-            url={demo} 
+            url={demo ? demo : undefined} 
           />
       </Modal>
     </div>

@@ -7,7 +7,7 @@ function ProjectPage() {
   const projectsHTML = projectsData.map( ({ title, description, coverImg, coverImgAlt, demo, codeLink, technologies}) => {
     return (
       <div
-        className="relative w-[40%]"
+        className="relative w-full md:w-[45%] mt-10"
         key={title}
       >
         <ProjectCard 
@@ -28,7 +28,7 @@ function ProjectPage() {
       <BackButton />
       <h1 className='text-white text-3xl'>Simple ideas that I had fun building</h1>
       <p className="mt-5">More projects coming soon...</p>  
-      <div className="mt-5 flex justify-around">
+      <div className="mt-5 flex-col md:flex justify-between flex-wrap">
         { projectsHTML }
       </div>
       <p className="mt-10">
