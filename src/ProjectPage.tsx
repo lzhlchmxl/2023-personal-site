@@ -27,7 +27,7 @@ function ProjectPage() {
     <div className="flex flex-col grow w-[80%] items-center relative text-white mb-10 rounded-md max-w-[1000px] mt-[80px] md:mt-[130px]">
       <BackButton />
       <h1 className='text-white text-3xl'>Simple ideas that I had fun building</h1>
-      <div className="mt-5 flex-col md:flex justify-between flex-wrap">
+      <div className="flex mt-5 flex-col md:flex-row justify-between flex-wrap">
         { projectsHTML }
       </div>
       <p className="mt-10">
