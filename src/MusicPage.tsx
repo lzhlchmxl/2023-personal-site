@@ -1,7 +1,7 @@
 import ReactPlayer from "react-player";
 import BackButton from "./BackButton";
 import { useRef, useState } from "react";
-import { videos } from "./data";
+import { musicVideos } from "./data";
 import billHoldingDog from "./assets/bill_holding_dog_sitting.jpg";
 // import billPianoSymmetrical from "./assets/billPianoSymmetrical.webp";
 import { faList, faXmark, faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
@@ -30,7 +30,7 @@ function MusicPage() {
             ref={playerRef} 
             controls
             playing={!isFirstVisit && isVideoPlaying}
-            url={videos[activeVideoIndex].url} 
+            url={musicVideos[activeVideoIndex].url} 
             onPlay={() => setIsVideoPlaying(true)}
             onPause={() => setIsVideoPlaying(false)}
             onEnded={() => setPlayListOpen(true)}
@@ -53,7 +53,7 @@ function MusicPage() {
             `}
         >
           {
-            videos.map( (video, index) => {
+            musicVideos.map( (video, index) => {
               return <button
                 className={`pl-2 py-2 sm:pl-5 first-of-type:mt-10 select-none w-full text-left 
                   ${ index === activeVideoIndex ? 

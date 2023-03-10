@@ -10,8 +10,10 @@ import forward from './assets/forward.mp4'
 import ourLove from './assets/our-love.mp4';
 import lydia from './assets/lydia.mp4';
 import unknownTitle from './assets/famous-unkown-title.mp4';
+import websiteReviwerDemo from './assets/website-reviewer-demo.mp4';
+import websiteReviwerCover from './assets/website-reviewer-cover.png';
 
-export const videos = [
+export const musicVideos = [
   {url: pathetique, title: "Beethoven's Pathetique 3rd Movement '21 [rearranged]"},
   {url: SAO, title: "Sword Art Online - OST '18 [improv]"},
   {url: forward, title: "Forward! '22 [original]"},
@@ -102,5 +104,23 @@ export const skillsetsData = [
     title: 'pitch presentation',
     description: 'As an aspiring entrepreneur, I have plenty of experience pitching ideas/products infront of judges and professionals.',
     icons: [{icon: faFilePowerpoint, description: 'PowerPoint'}],
+  }
+]
+
+export const projectsData = [
+  {
+    title: 'website reviewer',
+    description: 'An MVP web-app that allow user to create notes and save reviews on a snapshot of any given website.',
+    coverImg: websiteReviwerCover,
+    coverImgAlt: 'cover photo of website reviwer mvp',
+    demo: websiteReviwerDemo,
+    codeLink: 'https://github.com/lzhlchmxl/website-reviewer-mvp',
+    technologies: {
+      frontend: 'React + Typescript',
+      backend: 'Node.js',
+      database: 'JSON file (temp)',
+      hosting: 'Local',
+      cicd: 'Not supported',
+    }
   }
 ]

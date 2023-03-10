@@ -16,6 +16,7 @@
     "nuka-carousel": "^5.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
     "react-player": "^2.11.0",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
@@ -48,6 +49,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.13.0",
+    "@types/react-modal": "^3.13.1",
     "@types/webpack": "^5.28.0",
     "imagemin-webp-webpack-plugin": "^3.3.6",
     "ts-node": "^10.9.1",
