@@ -9,7 +9,7 @@ import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import logs from "./assets/logs.svg";
 import { useWindowDimensions } from './customHooks';
 import BackButton from './BackButton';
-import OpenToWorkLabel from './OpenToWorkLabel';
+// import OpenToWorkLabel from './OpenToWorkLabel';
 
 function ResumePage() {
 
@@ -47,7 +47,7 @@ function ResumePage() {
         </div>
         {/* center image */}
         <div className='relative w-[90%] aspect-square sm:w-[200px] lg:w-[400px] overflow-hidden rounded-md'>
-          <OpenToWorkLabel />
+          {/* <OpenToWorkLabel /> */}
           <img 
             src={billSmileCoding}
             alt='Bill smiling and coding'
@@ -80,7 +80,7 @@ function ResumePage() {
         </div>
         {/* all value props right to the image for mobile view */}
         <ul className='flex md:hidden flex-col list-disc text-white text-lg ml-[35px]'>
-          <li className='mb-1'>4 years of modern <span className='text-orange-500 font-semibold'>custom UI</span> experience with web frameworks.</li>
+          <li className='text-white mb-1 text-lg'>4 years of <span className='text-orange-500 font-semibold'>custom web development</span> experience with modern frameworks.</li>
           <li className='mb-1'><span className='text-orange-500 font-semibold'>T</span>est-<span className='text-orange-500 font-semibold'>D</span>riven <span className='text-orange-500 font-semibold'>D</span>evelopment and <span className='text-orange-500 font-semibold'>Type</span>script.</li>
           <li className='mb-1'>Product design and <span className='text-orange-500 font-semibold'>feature communications</span> with SME(Subject Matter Expert).</li>
           <li className='mb-1'>Client <span className='text-orange-500 font-semibold pl-[5px]'>engagement & relations</span>.</li>
