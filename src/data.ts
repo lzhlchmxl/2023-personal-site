@@ -148,7 +148,7 @@ export const projectsData = [
   },
   {
     title: 'recipe randomization app',
-    description: 'A mobile web-app that provides convenience for home-cooking couples to decide on a reasonable meal plan. It offers a one-button-click solution to generate a randomized meal plan that fits the input parameters (eg. prep time, ingradients, etc.)',
+    description: 'A mobile web-app that provides convenience for home-cooking couples to decide on a reasonable meal plan.',
     coverImg: recipeRandomizationAppCover,
     coverImgAlt: 'cover photo for recipe randomization app',
     demo: null,

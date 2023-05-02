@@ -48,14 +48,15 @@ export default function ProjectCard({
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const x = e.clientX;
-    const {left, width} = e.currentTarget.getClientRects()[0];
-    if (x < left + width / 2) { // clicking the 'watch demo' button
+    const y = e.clientY;
+    const {left, width, top} = e.currentTarget.getClientRects()[0];
+    if (y < (top + 351) && x < left + width / 2) { // clicking the 'watch demo' button
       if (demo === null) {
         window.alert('There is no demo video for this project yet.');
       } else {
         setIsModalOpen(true);
       }
-    } else { // clicking the 'view code' button
+    } else if (y < (top + 351)) { // clicking the 'view code' button
       window.open(codeLink, "_blank");
     }
   }
@@ -65,9 +66,9 @@ export default function ProjectCard({
   }
 
   return (
-    <div className="relative min-w-[300px] min-h-[500px] w-full flex flex-col justify-between rounded-md text-white border-lightGray border-[1px] bg-white/10">
-      {/* [TODO] cursor should not be pointers when hovering project text, fix if have time */}
-      <div className="absolute w-full h-full z-10 cursor-pointer"
+    <div className="relative min-w-[300px] min-h-[540px] w-full flex flex-col justify-between rounded-md text-white border-lightGray border-[1px] bg-white/10">
+      {/* [TODO] cursor shouldn't be pointer when hovering text */}
+      <div className="absolute w-full h-full z-10 hover:cursor-pointer"
         onMouseOver={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
         // [TODO] ehhh I messed up haha, there is gotta be a cleaner way to do this while achieving the sliding effect on hover/tap for both desktop and mobile
@@ -105,18 +106,18 @@ export default function ProjectCard({
       {
         isHover 
         ?
-        <>
+        <div className="flex flex-col justify-evenly grow">
           <p className="capitalize px-5">Frontend: {technologies.frontend}</p>
           <p className="capitalize px-5">Backend: {technologies.backend}</p>
           <p className="capitalize px-5">Database: {technologies.database}</p>
           <p className="capitalize px-5">Hosting: {technologies.hosting}</p>
           <p className="capitalize px-5 pb-5">CI/CD: {technologies.cicd}</p>
-        </>
+        </div>
         :
-        <>
+        <div className="flex flex-col justify-evenly grow">
           <p className="capitalize px-5"> Title: {title}</p>
           <p className="px-5 pb-5">Description: {description}</p>
-        </>
+        </div>
       }
       <Modal
         isOpen={isModalOpen}
