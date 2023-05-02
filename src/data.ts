@@ -47,6 +47,12 @@ export const pageSelectionData = [
 
 export const jobInfoData = [
   {
+    duration: '2023-present', 
+    companyName: 'communitech hub', 
+    companyAddress: 'kitchener, ON', 
+    jobTitle: 'web developer'
+  },
+  {
     duration: '2021-2022', 
     companyName: 'superscalar technologies | chosen plaintext consulting inc.', 
     companyAddress: 'kitchener, ON', 
